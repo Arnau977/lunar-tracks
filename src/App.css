@@ -1,9 +1,26 @@
+:root {
+  --color-primary: #282c34;
+  --color-secundary: #490a91;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+div, p{
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
+  align-items: center;
+  background: var(--color-primary);
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 10vmin;
   pointer-events: none;
 }
 
@@ -14,18 +31,53 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.App h1 {
+  align-self: center;
+}
+
+.App-content {
+  min-height: 87vh;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App .wrapper-res {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.App .search-results {
+  flex-wrap: wrap;
+  border-radius: 0.2rem;
+  width: 98%;
+  background: var(--color-secundary);
+}
+
+.search-item {
+  flex: 1 0 21%;
+  padding: 1em;
+  font-size: calc(1px + 2vmin);
+  /* margin: 1em 0.5rem 1em 0.5rem; */
+  /* border-width: 1px;
+  border-style: groove;
+  border-color: white; */
+}
+
+.search-item img {
+  border: 1px solid black;
 }
 
 @keyframes App-logo-spin {
