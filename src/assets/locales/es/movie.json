@@ -1,0 +1,16 @@
+{
+    "statuses": {
+        "seen": "Vista",
+        "planned": "Planeo ver",
+        "watching": "Viendo"
+    },
+    "details": {
+        "title": "Título: ",
+        "overview": "Resumen: ",
+        "release": "Fecha de estreno: ",
+        "voteAvg": "Puntuación media: ",
+        "voteCnt": "Nº votos: ",
+        "genres": "Géneros: ",
+        "runtime": "Duración: "
+    }
+}

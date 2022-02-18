@@ -1,7 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
+import { NAME_SPACE } from './../../i18n';
+import { useTranslation } from 'react-i18next';
 
 export function SearchBar({onSearch}) {
 
+    const { t } = useTranslation(NAME_SPACE.SEARCH);
+    
     const [searchValue, setSearchValue] = useState("");
 
     useEffect(() => {
@@ -12,7 +16,7 @@ export function SearchBar({onSearch}) {
     return (
         <div className="search-bar">
             <form action="#">
-                <input type="text" value={searchValue} onChange={(e) => setSearchValue(e.target.value)} placeholder="Añadir Película"/>
+                <input type="text" value={searchValue} onChange={(e) => setSearchValue(e.target.value)} placeholder={t('searchPlaceHolder')}/>
             </form>
         </div>
     )

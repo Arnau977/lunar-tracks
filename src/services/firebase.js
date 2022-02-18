@@ -1,12 +1,14 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { doc, setDoc } from "firebase/firestore"; 
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyAaMq5p5cAFai5GKgQf-dSm848VbMPJzlA",
   authDomain: "lunartracksdb.firebaseapp.com",
   projectId: "lunartracksdb",
@@ -24,4 +26,16 @@ export function initFirebase() {
   const analytics = getAnalytics(app); 
 }
 
+export function addMovie() {
+    initFirebase()
 
+    // Get image, synopsis from api
+    await setDoc(doc(db, "movies"), {
+        id: uuidv4(),
+        title: movie.title,
+        status: movie.status,
+        // image: "fdfasfsa.png",
+        // synopsis: "A movie very very good",
+        user: "testUserId", //user id
+    });
+}

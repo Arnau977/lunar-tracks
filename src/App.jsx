@@ -1,59 +1,49 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import { MovieList } from "./components/MovieList"
-import { SearchBar } from "./components/SearchBar";
-
-import logo from './logo.svg';
-import './App.css';
-
-import { SearchResults } from "./components/SearchResults";
-
+import { ListMovie } from "./pages/Movies/List/ListMovie";
+import { SearchBar } from "./pages/Search/SearchBar";
+import { SearchResults } from "./pages/Search/SearchResults";
+import { AppHeader } from "./layout/AppHeader";
+import { I18nextProvider } from "react-i18next";
+import "./i18n";
+import "./App.css";
 
 export default function App() {
-
   const [movies, setMovies] = useState([
-    { id: 1, title: "Test Movie", status: "Seen", user: "Demo", catalog: "Catalog Demo" },
+    { id: 0, title: "This is a Placeholder", status: "Seen" },
+    { id: 733, title: "This is a Title", status: "Planned" },
   ]);
 
-  const [searchString, setsearchString] = useState("")
+  const [searchString, setsearchString] = useState("");
 
-  const handleAddMovie = (searchItem) => {
-    setMovies((prevMovie) => {
-      // Not accurate, TODO
-      return [...prevMovie, {id: searchItem.id, title: searchItem.title, status: "Seen"}]
-    });
+  // const handleAddMovie = (searchItem) => {
+  //   setMovies((prevMovie) => {
+  //     // Not accurate, TODO
+  //     return [...prevMovie, {id: searchItem.id, title: searchItem.title, status: "Seen"}]
+  //   });
 
-  }
+  // }
 
   const handleSearch = (searchValue) => {
-      setsearchString(searchValue)
-    }
-  
+    setsearchString(searchValue);
+  };
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 id="title">
-          LunarTracksDB
-        </h1>
-      </header>
+      <I18nextProvider>
+        <AppHeader />
+        <div className="App-content">
+          <div className="wrapper-search">
+            <SearchBar onSearch={handleSearch} />
+          </div>
 
-      <div className="App-content">
-        <div className="wrapper-search">
-          <SearchBar onSearch={handleSearch}/>
-        </div>
-       
-       <div className="wrapper-res" style={{display: searchString != "" ? 'flex' : 'none' }}>
-          <SearchResults searchString={searchString}/>
-       </div>
+          <SearchResults searchString={searchString} />
 
-      <div className="wrapper-movies">
-      <div className="movieList" >
-          <MovieList movies= {movies} />
+          <div className="wrapper-movies">
+            <ListMovie movies={movies} />
+          </div>
         </div>
-      </div>
-      </div>
+      </I18nextProvider>
     </div>
   );
 }

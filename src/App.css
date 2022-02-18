@@ -8,6 +8,10 @@ html {
   height: 100%;
 }
 
+html, body, .app, .app>div {
+  height: 100%
+}
+
 div, p{
   margin: 0;
   padding: 0;
@@ -15,13 +19,19 @@ div, p{
 
 .App {
   text-align: center;
-  align-items: center;
   background: var(--color-primary);
+  padding: 0 1rem 2rem 1rem;
+}
+
+.App a {
+  text-decoration: none;
+  color: aliceblue;
 }
 
 .App-logo {
   height: 10vmin;
   pointer-events: none;
+  margin-top: 0.3rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -31,7 +41,12 @@ div, p{
 }
 
 .App-header {
+  display: flex;
+  justify-content: space-between;
   min-height: 10vh;
+}
+
+.App-head {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -40,46 +55,193 @@ div, p{
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App-head #title {
+  font-size: calc(30px + 2vmin);
+  font-weight: bold;
 }
 
-.App h1 {
-  align-self: center;
+.App-options {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  
+  border: 1px solid white;
+
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.language-selector {
+  align-items: center;
+  display: flex;
+}
+
+.App-options .wrapper-user {
+  display: flex;
+  flex-direction: column;
+}
+
+.App-options .user {
+  align-content: flex-start;
+}
+
+.App-options .user .logged-username, img {
+  align-self: flex-start;
+  font-size: calc(5px + 2vmin);
+}
+
+.App-options .user-options {
+  font-size: calc(5px + 1vmin);
+  align-content: flex-end;
 }
 
 .App-content {
   min-height: 87vh;
   font-size: calc(10px + 2vmin);
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.App .search-bar {
+  border-radius: 5px;
+  font-size: calc(4px + 2vmin);
+}
+
+.App .search-bar input{
+  border-radius: 5px;
+  font-size: calc(4px + 2vmin);
 }
 
 .App .wrapper-res {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   width: 100%;
-}
-.App .search-results {
-  flex-wrap: wrap;
-  border-radius: 0.2rem;
-  width: 98%;
   background: var(--color-secundary);
 }
 
+.App .search-results {
+  flex-wrap: wrap;
+  width: 98%;
+  margin: 1rem;
+  /* background: var(--color-secundary); */
+}
+
 .search-item {
-  flex: 1 0 21%;
+  flex: 1 1 15%;
+  width: min-content;
   padding: 1em;
   font-size: calc(1px + 2vmin);
-  /* margin: 1em 0.5rem 1em 0.5rem; */
-  /* border-width: 1px;
-  border-style: groove;
-  border-color: white; */
+}
+
+.search-item:hover {
+  background-color: rgba(0, 0, 0, 0.281);
 }
 
 .search-item img {
   border: 1px solid black;
+  width: 10rem;
 }
 
+.App .wrapper-res .page-control {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.page-control #prev-page{
+  order: 1;
+}
+
+.page-control #page{
+  order: 2;
+}
+
+.page-control #next-page{
+  order: 3;
+}
+
+.App .wrapper-movies {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0 1rem 0;
+}
+
+
+/* MOVIE LIST */
+
+.movie-list {
+  margin: 1em 0 1em 0;
+  width: 98%;
+}
+
+.movie-list .list-head {
+  display: flex;
+  color: black;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.829);
+}
+
+.movie-list .single-movie {
+  display: flex;
+  align-items: center;
+  background: rgba(153, 153, 153, 0.5);
+}
+
+.movie-list .single-movie .movie-info {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.single-movie img {
+  width: 3rem;
+}
+
+.status {
+  margin-right: 5rem;
+  width: 0.5rem;
+}
+
+tbody .status {
+  padding: 3rem 0; 
+}
+
+.image {
+  width: 5rem;
+  margin: 0 5rem;
+}
+
+.title {
+  width: 10rem;
+  margin: 0 10rem;
+}
+.reWatchCount {
+  width: 5rem;
+  margin: 0 5rem;
+}
+
+/* END MOVIE LIST */
+
+/* MOVIE STATUSES */
+.completed {
+  background-color: cornflowerblue;
+}
+
+.planned {
+  background-color: rgb(173, 173, 173);
+}
+
+.watching {
+  background-color: rgba(98, 184, 17, 0.842);
+}
+
+/* END MOVIE STATUSES */
+
+
+/* GENERAL */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -87,4 +249,8 @@ div, p{
   to {
     transform: rotate(360deg);
   }
+}
+
+.icons {
+  width: 2rem;
 }

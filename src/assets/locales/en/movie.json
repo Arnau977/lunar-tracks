@@ -1,0 +1,15 @@
+{
+    "singularName": "Pelicula",
+    "pluralName": "Peliculas",
+    "list": {
+        "status": "Status",
+        "statuses": {
+            "planned": "Planned",
+            "watching": "Watching",
+            "completed": "Completed"
+        },
+        "image": "Image",
+        "title": "Title",
+        "rewatch": "Rewatch"
+    }
+}
