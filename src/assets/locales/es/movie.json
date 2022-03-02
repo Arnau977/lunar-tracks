@@ -1,14 +1,23 @@
 {
-    "statuses": {
-        "seen": "Vista",
-        "planned": "Planeo ver",
-        "watching": "Viendo"
+    "singularName": "Pelicula",
+    "pluralName": "Peliculas",
+    "list": {
+        "status": "Estado",
+        "statuses": {
+            "completed": "Vista",
+            "planned": "Planeo ver",
+            "watching": "Viendo"
+        },
+        "image": "Imagen",
+        "title": "Titulo",
+        "rewatch": "Re-ver",
+        "comment": "Comentario"
     },
     "details": {
         "title": "Título: ",
         "overview": "Resumen: ",
         "release": "Fecha de estreno: ",
-        "voteAvg": "Puntuación media: ",
+        "voteAvg": "Puntuación Tmdb: ",
         "voteCnt": "Nº votos: ",
         "genres": "Géneros: ",
         "runtime": "Duración: "

@@ -1,15 +1,25 @@
 {
-    "singularName": "Pelicula",
-    "pluralName": "Peliculas",
+    "singularName": "Movie",
+    "pluralName": "Movies",
     "list": {
         "status": "Status",
         "statuses": {
-            "planned": "Planned",
-            "watching": "Watching",
-            "completed": "Completed"
+            "completed": "Seen",
+            "planned": "Plan to watch",
+            "watching": "Watching"
         },
         "image": "Image",
         "title": "Title",
-        "rewatch": "Rewatch"
+        "rewatch": "Rewatch",
+        "comment": "Comment"
+    },
+    "detailed": {
+        "title": "Title: ",
+        "overview": "Overview: ",
+        "release": "Release date: ",
+        "voteAvg": "Vote Average: ",
+        "voteCnt": "Vote count: ",
+        "genres": "Genres: ",
+        "runtime": "Runtime: "
     }
 }

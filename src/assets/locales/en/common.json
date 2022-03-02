@@ -4,20 +4,5 @@
         "login": "Login",
         "logout": "Log out",
         "createAccount": "Sign Up"
-    },
-    "movies": {
-        "statuses": {
-            "seen": "Seen",
-            "planned": "Plan to watch"
-        },
-        "details": {
-            "title": "Title: ",
-            "overview": "Overview: ",
-            "release": "Release date: ",
-            "voteAvg": "Vote Average: ",
-            "voteCnt": "Vote count: ",
-            "genres": "Genres: ",
-            "runtime": "Runtime: "
-        }
     }
 }

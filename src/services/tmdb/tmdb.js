@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const {apiKey, apiToken, defaultUrl, imageUrl} = conf;
 
 class Tmdb {
-    searchMoviesByTitle(searchString, page = 1) {
+    async searchMoviesByTitle(searchString, page = 1) {
 
         // const [lang, setLang] = useState(LANGUAGE.ENGLISH);
         // useEffect(() => {
@@ -14,7 +14,7 @@ class Tmdb {
         //     setLang(lng);
         // }, []);
     
-    
+        // TODO do something with language undefined
         const searchUrl = defaultUrl+ "search/movie?api_key="+ apiKey+ "&language="+ LANGUAGE+ "&query="+ searchString.replace(" ", "%20") + "&page="+ page;
     
         console.log("Query: " +  searchString)
@@ -36,8 +36,8 @@ class Tmdb {
             });
     }
 
-    searchMovieById(id = "0") {
-        const searchUrl = defaultUrl+ "movie/"+ id+ "api_key="+ apiKey+ "&language="+ localStorage.getItem(getLanguage());
+    async searchMovieById(id = "0") {
+        const searchUrl = defaultUrl+ "movie/"+ id+ "api_key="+ apiKey+ "&language="+ getLanguage;
     
         console.log("Query: " +  id)
         console.log(searchUrl)
@@ -54,7 +54,7 @@ class Tmdb {
             });
     }
 
-    getImageBaseUrl() {
+    async getImageBaseUrl() {
         return fetch(conf.imagesUrl+ "?api_key="+ apiKey)
         .then(res => res.json())
         .then(response => {

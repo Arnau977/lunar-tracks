@@ -1,6 +1,6 @@
 import React from 'react'
-import { useEffect } from 'react/cjs/react.development';
-import { searchMovieById } from '../../../tmdb/searchMovieById';
+import { useEffect } from 'react';
+import { tmdb } from '../../services/tmdb';
 
 export function Movie( { movieId }) {
 
@@ -18,13 +18,13 @@ export function Movie( { movieId }) {
     // window.location.hostname
 
     useEffect(() => {
-        movieDetails = searchMovieById(movieId)
+        movieDetails = tmdb.searchMovieById(movieId)
     }, [])
 
     return (
         <div>
             {/* TODO add image */}
-            <img className="movie-img" src={movieDetails.image}/>
+            <img alt={movieDetails.title} className="movie-img" src={movieDetails.image}/>
             <div className="movie-info">
                 <p>Title: {movieDetails.title}</p>
                 <p>Overview: {movieDetails.overview}</p>
@@ -38,4 +38,4 @@ export function Movie( { movieId }) {
             <div/>
         </div>
     );
-}
+};

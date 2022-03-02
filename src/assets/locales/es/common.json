@@ -1,7 +1,8 @@
 {
+    "searchPlaceHolder": "Buscar películas",
     "userOptions": {
         "login": "Iniciar sesión",
         "logout": "Cerrar sesión",
-        "createAccount": "Registrarse"
+        "createAccount": "Regístrate"
     }
 }

@@ -27,15 +27,15 @@ export function initFirebase() {
 }
 
 export function addMovie() {
-    initFirebase()
+    initFirebase();
 
     // Get image, synopsis from api
-    await setDoc(doc(db, "movies"), {
-        id: uuidv4(),
-        title: movie.title,
-        status: movie.status,
-        // image: "fdfasfsa.png",
-        // synopsis: "A movie very very good",
-        user: "testUserId", //user id
-    });
+    // setDoc(doc(db, "movies"), {
+    //     id: uuidv4(),
+    //     title: movie.title,
+    //     status: movie.status,
+    //     // image: "fdfasfsa.png",
+    //     // synopsis: "A movie very very good",
+    //     user: "testUserId", //user id
+    // });
 }
