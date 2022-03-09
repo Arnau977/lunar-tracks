@@ -22,9 +22,9 @@ export function Movie( { movieId }) {
     }, [])
 
     return (
-        <div>
-            {/* TODO add image */}
-            <img alt={movieDetails.title} className="movie-img" src={movieDetails.image}/>
+        <div className={'movie-detail'}>
+            {/* TODO add default image */}
+            <img alt={movieDetails.title + ' image'} className="movie-img" src={movieDetails.image}/>
             <div className="movie-info">
                 <p>Title: {movieDetails.title}</p>
                 <p>Overview: {movieDetails.overview}</p>

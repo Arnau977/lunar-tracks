@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NAME_SPACE } from './../../i18n';
 import { useTranslation } from 'react-i18next';
-import "./search.styles.css";
 
 export function SearchBar({onSearch}) {
 

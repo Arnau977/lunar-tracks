@@ -3,7 +3,6 @@ import { tmdb } from '../../services/tmdb/tmdb';
 import { SearchItem } from './SearchItem';
 import { NAME_SPACE } from './../../i18n';
 import { useTranslation } from 'react-i18next';
-import "./search.styles.css";
 
 export function SearchResults({searchString}) {
 

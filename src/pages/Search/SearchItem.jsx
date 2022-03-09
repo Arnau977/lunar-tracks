@@ -1,5 +1,4 @@
 import React, { useState, useEffect} from 'react'
-import "./search.styles.css";
 
 export function SearchItem(item) {
     

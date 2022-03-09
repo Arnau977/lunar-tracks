@@ -8,24 +8,25 @@ html {
   height: 100%;
 }
 
-html, body, .app, .app>div {
+html, body, #root {
   height: 100%
 }
 
-div, p{
+div, p {
   margin: 0;
   padding: 0;
 }
 
-.App {
+#root {
   text-align: center;
   background: var(--color-primary);
   padding: 0 1rem 2rem 1rem;
+  color:rgba(255, 255, 255, 0.829);
 }
 
-.App a {
+a {
   text-decoration: none;
-  color: aliceblue;
+  color: inherit;
 }
 
 .App-logo {
@@ -104,12 +105,74 @@ div, p{
   justify-content: center;
 }
 
-.App .wrapper-movies {
+.wrapper-movies {
   display: flex;
   justify-content: center;
   padding: 1rem 0 1rem 0;
 }
 
+/* SEARCH */
+.search-bar {
+  border-radius: 5px;
+  font-size: calc(4px + 2vmin);
+}
+
+.search-bar input {
+  border-radius: 5px;
+  font-size: calc(4px + 2vmin);
+}
+
+.wrapper-res {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  background: var(--color-secundary);
+}
+
+.search-results {
+  flex-wrap: wrap;
+  width: 98%;
+  margin: 1rem;
+  /* background: var(--color-secundary); */
+}
+
+.search-item {
+  flex: 1 1 15%;
+  width: min-content;
+  padding: 1em;
+  font-size: calc(1px + 2vmin);
+}
+
+.search-item:hover {
+  background-color: rgba(0, 0, 0, 0.281);
+}
+
+.search-item img {
+  border: 1px solid black;
+  width: 10rem;
+}
+
+.App .wrapper-res .page-control {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.page-control #prev-page {
+  order: 1;
+}
+
+.page-control #page {
+  order: 2;
+}
+
+.page-control #next-page {
+  order: 3;
+}
+
+/* END SEARCH */
 
 /* MOVIE LIST */
 

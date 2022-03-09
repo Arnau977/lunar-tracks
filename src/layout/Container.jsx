@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { SearchBar, SearchResults } from '../pages';
 import { AppHeader, SideNav } from './';
-import './../pages/Search/search.styles.css';
 
 export function Container(pageComponent) {
     const [searchString, setsearchString] = useState('')
@@ -12,7 +11,7 @@ export function Container(pageComponent) {
 
     return function ContainerWrapper() {
         return (
-            <>
+            <div className={'container'}>
                 <AppHeader/>
                 <SideNav/>
                 <div className="wrapper-search">
@@ -22,7 +21,7 @@ export function Container(pageComponent) {
                 <div>
                     {pageComponent}
                 </div>
-            </>
+            </div>
         );
     };
 }
