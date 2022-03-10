@@ -5,6 +5,7 @@ import { PATH } from './app.routes.const.js';
 import { Error, Movie, ListMovies, User } from './pages';
 import { Container } from './layout';
 import InitialPage from './pages/Initial/InitialPage.jsx';
+import { Search, SearchBar } from './pages/Search/Search.jsx';
 
 const _routes = ({ isLogged, user }) => {
   //   const GuardedRoute = ({ component: Component, access, ...rest }) => {
@@ -28,6 +29,8 @@ const _routes = ({ isLogged, user }) => {
   //   };
   return (
     <Switch>
+      <Route exact path={'/test'} component={Container(<Search />)} />
+      <Route exact path={'/'} component={Container(<InitialPage />)} />
       <Route exact path={PATH.ERROR} component={Container(<Error />)} />
       <Route exact path={PATH.MOVIE.LIST} component={Container(<ListMovies />)} />
       <Route exact path={PATH.MOVIE.EDIT} component={Container(<Movie />)} />

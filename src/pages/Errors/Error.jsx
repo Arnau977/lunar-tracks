@@ -8,6 +8,10 @@ export function Error({ type }) {
             errorMessage = 'This page could not be found on our server';
             break;
 
+        case 'wip':
+            errorMessage = 'This page is Work In Progress!';
+            break;
+            
         default:
             errorMessage = 'This is an unknown error';
             break;

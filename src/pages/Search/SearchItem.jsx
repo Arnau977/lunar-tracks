@@ -1,10 +1,7 @@
 import React, { useState, useEffect} from 'react'
 
-export function SearchItem(item) {
-    
-    const {id, title, overview, image} = item;
-
-    // TODO create a detailed window for movies
+export function SearchItem({id, title, overview, image}) {
+    // TODO create acess to detailed window for movies
 
     return (
         // <a href={"https://www.themoviedb.org/movie/"+ id +"?language=en"} target="_blank" className="search-item" key={id} title={title}>
